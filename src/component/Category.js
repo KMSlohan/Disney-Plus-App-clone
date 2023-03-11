@@ -44,8 +44,8 @@ const Container = styled.div`
   margin-top: 30px;
   padding: 30px 0px 26px;
   display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(5, 1fr);
+  gap: 25px; /* 그리드 간의 간격 */
+  grid-template-columns: repeat(5, 1fr); /* 그리드 5개의 크기를 균일하게  */
 
 
   @media (max-width: 768px) {
