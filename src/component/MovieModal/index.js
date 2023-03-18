@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import useOnClickOutside from '../../hooks/useOnClickOutside'
 import './MovieModal.css'
 
 const MovieModal = ({
@@ -11,10 +12,18 @@ const MovieModal = ({
   vote_average,
   setModalOpen
 }) => {
+
+  const ref = useRef()
+
+  // 모달 창 밖 클릭하면 모달 창 종료
+  useOnClickOutside(ref, () => {
+    setModalOpen(false)
+  })
+  
   return (
     <div className='presentation' role="presentation">
       <div className='wrapper-modal'>
-        <div className='modal'>
+        <div className='modal' ref={ref}>
           <span
             onClick={() => setModalOpen(false)}
             className="modal-close">
