@@ -59,7 +59,7 @@ const Row = ( {title, id ,fetchUrl} ) => {
       >
         <Content>
           {movies.map(movie => (
-            <SwiperSlide>
+            <SwiperSlide key={movie.id}>
               <Wrap>
                 <img
                   key={movie.id}
